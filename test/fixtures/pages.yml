@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  machine_name: MyString
+  cell_type: one
+  public: false
+  active: false
+  removable: false
+
+two:
+  machine_name: MyString
+  cell_type: two
+  public: false
+  active: false
+  removable: false

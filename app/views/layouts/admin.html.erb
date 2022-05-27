@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Iteasykit</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+  </head>
+
+  <body>
+  <%= render "admin/shared/header" %>
+  <div class="container is-fullhd">
+    <section class="section">
+      <%= yield %>
+    </section>
+  </div>
+  <div id='hello' class="notification is-info is-light" data-controller="hello">
+    <button class="delete" data-action="hello#connect">fsdfsdfsdfsdf</button>
+    <%= @notice %>
+  </div>
+  <div data-controller="hello">
+    <input type="text">
+    <button data-action="click->hello#greet">Greet</button>
+  </div>
+
+
+  <%= render 'admin/shared/footer' %>
+  </body>
+</html>

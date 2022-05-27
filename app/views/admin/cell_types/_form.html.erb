@@ -1,0 +1,62 @@
+<%= form_with(model: [:admin, cell_type]) do |form| %>
+  <% if cell_type.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cell_type.errors.count, "error") %> prohibited this cell_type from being saved:</h2>
+
+      <ul>
+        <% cell_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :machine_name, style: "display: block" %>
+    <%= form.text_field :machine_name %>
+  </div>
+
+  <div>
+    <%= form.label :type_model, style: "display: block" %>
+    <%= form.select :type_model, [[(t :cell), 'cell'], [(t :block), 'block'], [(t :page), 'page'], [(t :comment), 'comment']] %>
+  </div>
+
+  <div>
+    <%= form.label :public, style: "display: block" %>
+    <%= form.check_box :public %>
+  </div>
+
+  <div>
+    <%= form.label :active, style: "display: block" %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div>
+    <%= form.label :sortable, style: "display: block" %>
+    <%= form.check_box :sortable %>
+  </div>
+
+  <div>
+    <%= form.label :removable, style: "display: block" %>
+    <%= form.check_box :removable %>
+  </div>
+
+  <div>
+    <%= form.label :commentable, style: "display: block" %>
+    <%= form.check_box :commentable %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

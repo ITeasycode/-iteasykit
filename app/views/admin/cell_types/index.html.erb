@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cell types</h1>
+
+<div id="cell_types">
+  <% @cell_types.each do |cell_type| %>
+    <%= render cell_type %>
+    <p>
+      <%= link_to "Show this cell type", [:admin, cell_type] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New cell type", new_admin_cell_type_path %>

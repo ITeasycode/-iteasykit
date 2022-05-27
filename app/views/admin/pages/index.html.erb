@@ -1,0 +1,11 @@
+<%= render ContentHeaderComponent.new(title: (t :page), subtitle: (t :page_description)) %>
+<div id="pages">
+  <% @pages.each do |page| %>
+    <%= render page %>
+    <p>
+      <%= link_to "Show this page", [:admin, page] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New page", new_admin_page_path %>

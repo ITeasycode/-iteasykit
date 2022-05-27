@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cell_type %>
+
+<div>
+  <%= link_to "Edit this cell type", edit_admin_cell_type_path(@cell_type) %> |
+  <%= link_to "Back to cell types", admin_cell_types_path %>
+
+  <%= button_to "Destroy this cell type", [:admin, @cell_type], method: :delete %>
+</div>

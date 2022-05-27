@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  machine_name: MyString
+  type_model: MyString
+  public: false
+  active: false
+  sortable: false
+  removable: false
+  commentable: false
+
+two:
+  machine_name: MyString
+  type_model: MyString
+  public: false
+  active: false
+  sortable: false
+  removable: false
+  commentable: false
