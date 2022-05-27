@@ -4,7 +4,6 @@ class Admin::PagesController < AdminController
   # GET /admin/pages or /admin/pages.json
   def index
     @pages = Page.all
-    @notice =  "Page was successfully created."
   end
 
   # GET /admin/pages/1 or /admin/pages/1.json

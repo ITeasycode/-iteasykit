@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_27_121028) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_27_162749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,7 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_121028) do
     t.bigint "record_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+    t.string "locale", null: false
+    t.index ["record_type", "record_id", "name", "locale"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -54,12 +55,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_121028) do
 
   create_table "cell_types", force: :cascade do |t|
     t.string "machine_name"
-    t.string "type_model", default: "cell"
-    t.boolean "public", default: false
-    t.boolean "active", default: false
-    t.boolean "sortable", default: false
-    t.boolean "removable", default: false
-    t.boolean "commentable", default: false
+    t.string "type_model"
+    t.boolean "public"
+    t.boolean "active"
+    t.boolean "sortable"
+    t.boolean "removable"
+    t.boolean "commentable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,9 +106,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_121028) do
   create_table "pages", force: :cascade do |t|
     t.string "machine_name"
     t.bigint "cell_type_id", null: false
-    t.boolean "public", default: false
-    t.boolean "active", default: false
-    t.boolean "removable", default: false
+    t.boolean "public"
+    t.boolean "active"
+    t.boolean "removable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cell_type_id"], name: "index_pages_on_cell_type_id"
